@@ -5,8 +5,8 @@
       "name": "Alice's Adventures in Wonderland",
       "author": "Lewis Carroll",
       "cost": 340,
-      "quantity": 0,
-      "status": "Sin Stock"
+      "quantity": 400,
+      "status": "Con Stock"
     },
     {
       "id": 4,

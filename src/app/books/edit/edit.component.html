@@ -11,23 +11,25 @@
 
 <div class="container" style="margin-top: 20px;">
   <form [formGroup]="bookForm" (ngSubmit)="update()" class="p-fluid">
-    <div class="p-field">
+    <div class="mb-3">
       <label for="txtBookName" class="p-d-block">Nombre del Libro</label>
       <input type="text" pInputText formControlName="name" id="txtBookName" class="p-inputtext" />
     </div>
-    <div class="p-field">
+    <div class="mb-3">
       <label for="txtAuthor" class="p-d-block">Autor</label>
       <input type="text" pInputText formControlName="author" id="txtAuthor" class="p-inputtext" />
     </div>
-    <div class="p-field">
+    <div class="mb-3">
       <label for="txtCost" class="p-d-block">Costo</label>
       <input type="number" pInputText formControlName="cost" id="txtCost" class="p-inputtext" />
     </div>
-    <div class="p-field">
+    <div class="mb-3">
       <label for="txtQuantity" class="p-d-block">Cantidad</label>
       <input type="number" pInputText formControlName="quantity" id="txtQuantity" class="p-inputtext" />
     </div>
-    <button type="submit" pButton label="Actualizar" class="p-button p-button-dark" [disabled]="bookForm.invalid"></button>
+    <div class="p-toolbar-group-end">
+      <button type="submit" pButton label="Actualizar" class="p-button p-button-dark" [disabled]="bookForm.invalid"></button>
+    </div>
   </form>
 </div>
 <p-toast></p-toast>
