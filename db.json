@@ -1,0 +1,36 @@
+{
+  "books": [
+    {
+      "id": 2,
+      "name": "Alice's Adventures in Wonderland",
+      "author": "Lewis Carroll",
+      "cost": 340,
+      "quantity": 0,
+      "status": "Sin Stock"
+    },
+    {
+      "id": 4,
+      "author": "William Golding",
+      "name": "The Lord Of The Flies",
+      "cost": 400,
+      "quantity": 10,
+      "status": "Con Stock"
+    },
+    {
+      "id": 7,
+      "name": "Ulysses",
+      "author": "James Joyce",
+      "cost": 10,
+      "quantity": 40,
+      "status": "Con Stock"
+    },
+    {
+      "id": 8,
+      "author": "asd",
+      "name": "Federico",
+      "cost": 40,
+      "quantity": 40,
+      "status": "Con Stock"
+    }
+  ]
+}

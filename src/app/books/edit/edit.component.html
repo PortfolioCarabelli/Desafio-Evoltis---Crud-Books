@@ -1,0 +1,33 @@
+<p-toolbar>
+  <div class="p-toolbar-group-end">
+    <h3>
+      Actualizar Libro
+    </h3>
+  </div>
+  <div class="p-toolbar-group-end">
+    <p-button label="Volver" routerLink="/list"></p-button>
+  </div>
+</p-toolbar>
+
+<div class="container" style="margin-top: 20px;">
+  <form [formGroup]="bookForm" (ngSubmit)="update()" class="p-fluid">
+    <div class="p-field">
+      <label for="txtBookName" class="p-d-block">Nombre del Libro</label>
+      <input type="text" pInputText formControlName="name" id="txtBookName" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="txtAuthor" class="p-d-block">Autor</label>
+      <input type="text" pInputText formControlName="author" id="txtAuthor" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="txtCost" class="p-d-block">Costo</label>
+      <input type="number" pInputText formControlName="cost" id="txtCost" class="p-inputtext" />
+    </div>
+    <div class="p-field">
+      <label for="txtQuantity" class="p-d-block">Cantidad</label>
+      <input type="number" pInputText formControlName="quantity" id="txtQuantity" class="p-inputtext" />
+    </div>
+    <button type="submit" pButton label="Actualizar" class="p-button p-button-dark" [disabled]="bookForm.invalid"></button>
+  </form>
+</div>
+<p-toast></p-toast>

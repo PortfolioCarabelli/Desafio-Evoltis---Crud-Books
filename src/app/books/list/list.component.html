@@ -1,0 +1,73 @@
+<p-toolbar>
+    <div class="p-toolbar-group-end">
+        <h1>
+            Lista Libros
+        </h1>
+    </div>
+    <div class="p-toolbar-group-end">
+        <p-button label="Agregar Nuevo Libro" routerLink="/add"></p-button>
+    </div>
+</p-toolbar>
+
+
+<div>
+    <p-table [value]="books" [paginator]="true" [rows]="4" sortMode="multiple">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="name">Nombre <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="author">Autor <p-sortIcon field="author"></p-sortIcon></th>
+                <th pSortableColumn="cost">Precio <p-sortIcon field="cost"></p-sortIcon></th>
+                <th pSortableColumn="quantity">Cantidad <p-sortIcon field="quantity"></p-sortIcon></th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-book let-rowIndex="rowIndex">
+            <tr class="p-selectable-row">
+                <td>{{ book.name }}</td>
+                <td>{{ book.author }}</td>
+                <td>${{book.cost}}</td>
+                <td>{{ book.quantity }}</td>
+                <td>
+                    <p-tag [value]="book.status" [severity]="getSeverity(book.status)"></p-tag>
+                </td>
+                <td>
+                    <div class="flex align-items-center justify-content-center gap-2">
+                        <button pButton pRipple type="button" pTooltip="Editar" tooltipPosition="top"
+                            [routerLink]="['/edit', book.id]" icon="pi pi-pencil"
+                            class="p-button-rounded p-button-text"></button>
+                        <button pButton pRipple type="button" pTooltip="Eliminar" tooltipPosition="top"
+                            icon="pi pi-times" class="p-button-rounded p-button-text p-button-danger"
+                            (click)="openDeleteModal(book.id)"></button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="8">No Se Encontraron Libros.</td>
+            </tr>
+        </ng-template>
+
+    </p-table>
+</div>
+<p-toast></p-toast>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Libro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Esta seguro que desea eliminar este item?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" (click)="delete()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
