@@ -14,11 +14,26 @@
     <p-table [value]="books" [paginator]="true" [rows]="4" sortMode="multiple">
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="name">Nombre <p-sortIcon field="name"></p-sortIcon></th>
-                <th pSortableColumn="author">Autor <p-sortIcon field="author"></p-sortIcon></th>
-                <th pSortableColumn="cost">Precio <p-sortIcon field="cost"></p-sortIcon></th>
-                <th pSortableColumn="quantity">Cantidad <p-sortIcon field="quantity"></p-sortIcon></th>
-                <th>Status</th>
+                <th>
+                    Nombre
+                    <p-columnFilter type="text" field="name" matchMode="contains" styleClass="small-filter"></p-columnFilter>
+                </th>
+                <th>
+                    Autor
+                    <p-columnFilter type="text" field="author" matchMode="contains" styleClass="small-filter"></p-columnFilter>
+                </th>
+                <th>
+                    Precio
+                    <p-columnFilter type="numeric" field="cost" matchMode="equals" styleClass="small-filter"></p-columnFilter>
+                </th>
+                <th>
+                    Cantidad
+                    <p-columnFilter type="numeric" field="quantity" matchMode="equals" styleClass="small-filter"></p-columnFilter>
+                </th>
+                <th>
+                    Estado
+                    <p-columnFilter type="text" field="status" matchMode="contains" styleClass="small-filter"></p-columnFilter>
+                </th>
                 <th></th>
             </tr>
         </ng-template>
